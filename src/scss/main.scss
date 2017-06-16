@@ -1,0 +1,83 @@
+@import "general.scss";
+
+#navmenu-wrapper {
+	position: fixed;
+	@include flex-centered;
+	justify-content: center;
+	top: 0;
+	background-color: $brand-tertiary;
+	width: 100%;
+	height: 75px;
+	z-index: 99;
+
+	.logo-wrapper {
+		position: absolute;
+		left: 40px;
+		width: 100%;
+
+		.hrtech-logo {
+
+		}
+	}
+
+	.navmenu-desktop {
+		.navmenu-item {
+			display: inline-block;
+			position: relative;
+			font: 400 13px $font-secondary;
+			text-transform: uppercase;
+			margin: 0 30px;
+
+			> a {
+				color: $brand-secondary;
+
+				&:hover {
+					color: $brand-primary;
+				}
+			}
+
+			&.dropdown {
+				.navmenu-dropdown {
+					position: absolute;
+					display: none;
+					top: 100%;
+					left: 0;
+					background: $brand-secondary;
+				}
+
+				&:hover {
+					.navmenu-dropdown {
+						display: block;
+					}
+				}
+			}
+
+			.btn-custom {
+				font: 400 13px $font-secondary;
+				text-transform: uppercase;
+				color: $brand-secondary;
+				background: $brand-primary;
+				border: none;
+				outline: none;
+				padding: 12px 56px;
+				cursor: pointer;
+
+				&:hover {
+					color: $brand-primary;
+					background: $brand-secondary;
+				}
+			}
+		}
+	}
+}
+
+header {
+	background: url(../img/bg-header-lg.jpg) no-repeat center top / cover;
+	padding-top: 57.7083%;
+}
+
+@media screen and (max-width: 1599px) {
+	#navmenu-wrapper {
+		justify-content: flex-end;
+	}
+}

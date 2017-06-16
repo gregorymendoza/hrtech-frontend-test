@@ -5,18 +5,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
 	<title>Front-End Test - HR Tech World</title>
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<nav>
-		<ul>
-			<li class="current-menu-item"><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Our Shows</a></li>
-			<li><a href="#">Who Attends</a></li>
-			<li><a href="#">Our Clients</a></li>
-			<li><a href="#">Careers</a></li>
-			<li><a href="#">More</a>
-				<ul>
+	<nav id="navmenu-wrapper">
+		<div class="logo-wrapper">
+			<img class="hrtech-logo" src="img/hrtech-logo.svg" alt="HR Tech World Logo">
+		</div>
+
+		<ul class="navmenu-desktop">
+			<li class="navmenu-item"><a href="#">About</a></li>
+			<li class="navmenu-item"><a href="#">Our Shows</a></li>
+			<li class="navmenu-item"><a href="#">Who Attends</a></li>
+			<li class="navmenu-item"><a href="#">Our Clients</a></li>
+			<li class="navmenu-item"><a href="#">Careers</a></li>
+			<li class="navmenu-item dropdown"><a href="#">More</a>
+				<ul class="navmenu-dropdown">
 					<li><a href="#">Press Release</a></li>
 					<li><a href="#">Contact</a></li>
 					<li><a href="#">HRTECH World</a>
@@ -35,11 +39,9 @@
 					<li><a href="#">HRN</a></li>
 				</ul>
 			</li>
-			<li><button>Get Tickets!</button></li>
+			<li class="navmenu-item"><button class="btn-custom">Get Tickets!</button></li>
 		</ul>
 	</nav>
-
-	<img src="img/hrtech-logo.svg" alt="HR Tech World Logo">
 
 	<header>
 
