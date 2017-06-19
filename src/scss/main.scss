@@ -1,11 +1,12 @@
 @import "general.scss";
 
-#navmenu-wrapper {
+#main-menu-wrapper {
 	position: fixed;
 	@include flex-centered;
 	justify-content: center;
 	top: 0;
 	background-color: $brand-tertiary;
+	text-transform: uppercase;
 	width: 100%;
 	height: 75px;
 	z-index: 99;
@@ -16,20 +17,20 @@
 		width: 100%;
 
 		.hrtech-logo {
-
+			width: 240px;
 		}
 	}
 
-	.navmenu-desktop {
-		.navmenu-item {
+	#desktop-menu {
+		.desktop-menu-item {
 			display: inline-block;
 			position: relative;
 			font: 400 13px $font-secondary;
-			text-transform: uppercase;
 			margin: 0 30px;
 
 			> a {
 				color: $brand-secondary;
+				transition: all 0.3s;
 
 				&:hover {
 					color: $brand-primary;
@@ -37,36 +38,229 @@
 			}
 
 			&.dropdown {
-				.navmenu-dropdown {
+				.dropdown-wrapper {
 					position: absolute;
-					display: none;
-					top: 100%;
-					left: 0;
-					background: $brand-secondary;
+					top: 16px;
+					left: 50%;
+					transform: translateX(-50%);
+					visibility: hidden;
+					opacity: 0;
+	            	transition: all 0.35s;
+					padding-top: 26px;
+					cursor: pointer;
+
+					.dropdown-menu {
+						min-width: 200px;
+						border-top: 3.5px solid rgba(0, 0, 0, 0.1);
+						background: $brand-secondary;
+						padding: 6px 0;
+
+	            		> li {
+	            			> a {
+	            				display: block;
+	            				color: $text-dark;
+								font-weight: 500;
+	    						font-size: 13.5px;
+	    						padding: 6px 18px;
+	    						transition: all 0.35s;
+
+	    						.event-details {
+	    							font-size: 8px;
+
+	    							.event-city {
+	    								&.red {
+	    									color: $brand-red;
+	    								}
+
+	    								&.blue {
+											color: $brand-blue;
+	    								}
+	    							}
+	    						}
+
+	    						&:hover {
+	    							color: $brand-secondary;
+	    							background-color: $brand-primary;
+
+	    							.event-date {
+	    								color: $brand-secondary;
+	    								transition: all 0.35s;
+	    							}
+	    						}
+	            			}
+	            		}
+					}
 				}
 
 				&:hover {
-					.navmenu-dropdown {
-						display: block;
+					.dropdown-wrapper {
+						visibility: visible;
+						opacity: 1;
+						transform: translateX(-70%);
 					}
 				}
 			}
 
 			.btn-custom {
-				font: 400 13px $font-secondary;
-				text-transform: uppercase;
-				color: $brand-secondary;
-				background: $brand-primary;
-				border: none;
-				outline: none;
-				padding: 12px 56px;
+				@include btn-custom-props;
+			}
+		}
+	}
+
+	#mobile-menu-trigger {
+		display: none;
+		position: relative;
+		width: 26px;
+		height: 18px;
+		right: 14px;
+		transform: rotate(0deg);
+		transition: 0.5s ease-in-out;
+		cursor: pointer;
+
+		span {
+			display: block;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background: $brand-secondary;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: 0.25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0px;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: 7px;
+			}
+
+			&:nth-child(4) {
+				top: 14px;
+			}
+
+		}
+
+		&.open {
+			span {
+				&:nth-child(1) {
+					top: 7px;
+					width: 0%;
+					left: 50%;
+				}
+
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+
+				&:nth-child(4) {
+					top: 7px;
+					width: 0%;
+					left: 50%;
+				}
+			}
+		}
+	}
+
+	#mobile-menu {
+		display: none;
+		position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    padding-top: 85px;
+	    background-color: $brand-tertiary;
+	    text-align: center;
+	    transform: translateX(150vw);
+    	transition: transform 0.4s ease-in-out;
+	    z-index: -1;
+
+	    &.active {
+			transform: translateX(0);
+		}
+
+		li {
+			display: block;
+		}
+
+		.mobile-menu-content {
+			position: relative;
+
+			.mobile-main-menu {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.mobile-submenu {
+				visibility: hidden;
+				opacity: 0;
+				transition: all 0.5s;
+
+				&.visible {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				.event-details {
+					font-size: 8px;
+
+					.event-city {
+						&.red {
+							color: $brand-red;
+						}
+
+						&.blue {
+							color: $brand-blue;
+						}
+					}
+				}
+			}
+		}
+
+		.mobile-menu-item {
+			font: 500 13.5px $font-secondary;
+
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+
+			&.head-item {
+				color: $brand-primary;
+				margin-bottom: 45px;
+			}
+
+			&.return {
+				display: inline-block;
+				color: $text-gray;
+				margin-top: 50px;
 				cursor: pointer;
+			}
+
+			&.button {
+				margin-bottom: 30px;
+			}
+
+			a {
+				color: $brand-secondary;
+				transition: all 0.3s;
 
 				&:hover {
 					color: $brand-primary;
-					background: $brand-secondary;
 				}
 			}
+		}
+
+		.btn-custom {
+			@include btn-custom-props;
 		}
 	}
 }
@@ -76,8 +270,48 @@ header {
 	padding-top: 57.7083%;
 }
 
+/***** Media Queries *****/
 @media screen and (max-width: 1599px) {
-	#navmenu-wrapper {
+	#main-menu-wrapper {
 		justify-content: flex-end;
+	}
+}
+
+@media screen and (max-width: 1319px) {
+	#main-menu-wrapper {
+		.logo-wrapper {
+			left: 20px;
+		}
+
+		#desktop-menu {
+			display: none;
+		}
+
+		#mobile-menu-trigger,
+		#mobile-menu {
+			display: block;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	header {
+		background: url(../img/bg-header-sm.jpg) no-repeat center top / cover;
+		padding-top: 80.1%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	header {
+		background: url(../img/bg-header-xs.jpg) no-repeat center top / cover;
+		padding-top: 242.81%;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	#mobile-menu {
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
 }

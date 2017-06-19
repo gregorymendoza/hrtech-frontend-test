@@ -1,16 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,900|Montserrat:100,300,400,500,700,900|Playfair+Display);
 
-/* Variables */
+/***** Variables *****/
 $font-primary: 'Roboto', sans-serif;
 $font-secondary: 'Montserrat', sans-serif;
 $font-tertiary: 'Playfair Display', serif;
 $brand-primary: #97ca00;
 $brand-secondary: #fff;
 $brand-tertiary: #000;
+$brand-red: #e80f42;
+$brand-blue: #00a8e2;
+$text-dark: #2c292a;
+$text-gray: #4d4d4d;
 
 * {
     box-sizing: border-box;
 }
+
+body, h1, h2, h3, p {
+	margin: 0;
+}
+
+ul { padding: 0; margin: 0; list-style: none; }
+
+a, a:hover, a:visited, a:focus { text-decoration: none; }
 
 body {
 	font-family: $font-primary;
@@ -19,15 +31,32 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-ul { padding: 0; margin: 0; list-style: none; }
-
-a, a:hover, a:visited, a:focus { text-decoration: none; }
-
-body, h1, h2, h3, p {
-	margin: 0;
-}
-
+/***** Mixins *****/
 @mixin flex-centered {
 	display: flex;
 	align-items: center;
+}
+
+@mixin btn-custom-props {
+	font: 400 13px $font-secondary;
+	text-transform: uppercase;
+	color: $brand-secondary;
+	background: $brand-primary;
+	border: none;
+	outline: none;
+	padding: 12px 56px;
+	cursor: pointer;
+	transition: all 0.3s;
+
+	&:hover {
+		color: $brand-primary;
+		background: $brand-secondary;
+	}
+}
+
+@mixin absolute-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
