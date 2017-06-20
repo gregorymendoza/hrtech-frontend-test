@@ -8,16 +8,16 @@
 	background-color: $brand-tertiary;
 	text-transform: uppercase;
 	width: 100%;
-	height: 75px;
+	height: 3.90vw;
 	z-index: 99;
 
 	.logo-wrapper {
 		position: absolute;
-		left: 40px;
+		left: 2.08vw;
 		width: 100%;
 
 		.hrtech-logo {
-			width: 240px;
+			width: 12.5vw;
 		}
 	}
 
@@ -25,8 +25,9 @@
 		.desktop-menu-item {
 			display: inline-block;
 			position: relative;
-			font: 400 13px $font-secondary;
-			margin: 0 30px;
+			font-size: 0.67vw;
+			font-weight: 400;
+			margin: 0 1.56vw;
 
 			> a {
 				color: $brand-secondary;
@@ -40,32 +41,32 @@
 			&.dropdown {
 				.dropdown-wrapper {
 					position: absolute;
-					top: 16px;
+					top: 0.83vw;
 					left: 50%;
 					transform: translateX(-50%);
 					visibility: hidden;
 					opacity: 0;
 	            	transition: all 0.35s;
-					padding-top: 26px;
+					padding-top: 1.35vw;
 					cursor: pointer;
 
 					.dropdown-menu {
-						min-width: 200px;
-						border-top: 3.5px solid rgba(0, 0, 0, 0.1);
+						min-width: 10.41vw;
+						border-top: 0.15vw solid rgba(0, 0, 0, 0.1);
 						background: $brand-secondary;
-						padding: 6px 0;
+						padding: 0.31vw 0;
 
 	            		> li {
 	            			> a {
 	            				display: block;
 	            				color: $text-dark;
 								font-weight: 500;
-	    						font-size: 13.5px;
-	    						padding: 6px 18px;
+	    						font-size: 0.67vw;
+	    						padding: 0.31vw 0.93vw;
 	    						transition: all 0.35s;
 
 	    						.event-details {
-	    							font-size: 8px;
+	    							font-size: 0.41vw;
 
 	    							.event-city {
 	    								&.red {
@@ -99,10 +100,6 @@
 						transform: translateX(-70%);
 					}
 				}
-			}
-
-			.btn-custom {
-				@include btn-custom-props;
 			}
 		}
 	}
@@ -227,7 +224,8 @@
 		}
 
 		.mobile-menu-item {
-			font: 500 13.5px $font-secondary;
+			font-size: 13.5px;
+			font-weight: 500;
 
 			&:not(:last-child) {
 				margin-bottom: 15px;
@@ -258,19 +256,201 @@
 				}
 			}
 		}
-
-		.btn-custom {
-			@include btn-custom-props;
-		}
 	}
 }
 
 header {
+	position: relative;
 	background: url(../img/bg-header-lg.jpg) no-repeat center top / cover;
 	padding-top: 57.7083%;
+	transition: all 0.75s ease-in-out;
+
+	#header-top {
+		position: absolute;
+		top: 15.31vw;
+		width: 100%;
+
+		h1 {
+			display: inline-block;
+			position: relative;
+			font: 400 5.729vw $font-tertiary;
+			color: $brand-secondary;
+			text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+
+			span {
+				position: absolute;
+				font-size: 2.031vw;
+				text-align: left;
+				width: fit-content;
+
+				&:first-of-type {
+					left: 18%;
+				}
+
+				&:last-of-type {
+					bottom: -17%;
+					left: 19%;
+					width: 105%;
+				}
+			}
+		}
+	}
+
+	#header-bottom {
+		position: absolute;
+		bottom: 4.166vw;
+		width: 100%;
+
+		h2 {
+			font-size: 1.71vw;
+			font-weight: 900;
+			color: $brand-secondary;
+			margin-bottom: 0.78vw;
+		}
+
+		button {
+			&:first-of-type {
+				color: $brand-primary;
+				background-color: $brand-secondary;
+				margin-right: 1.35vw;
+
+				&:hover {
+					color: $brand-secondary;
+					background: $brand-primary;
+				}
+			}
+		}
+
+		.sponsors-brands {
+			li {
+				display: inline-block;
+				line-height: 0;
+				vertical-align: middle;
+				margin-top: 4.42vw;
+
+				#avature-logo {
+					width: 4.83vw;
+				}
+
+				#benify-logo {
+					width: 6.35vw;
+				}
+
+				#cornerstone-logo {
+					width: 7.23vw;
+				}
+
+				#ibm-logo {
+					width: 3.69vw;
+				}
+
+				#oracle-logo {
+					width: 5.36vw;
+				}
+
+				#sapsuccessfactors-logo {
+					width: 12.29vw;
+				}
+
+				&:not(:nth-last-child(2)) {
+					margin-right: 2.18vw;
+				}
+			}
+		}
+	}
+
+	.header-featured {
+		position: absolute;
+		bottom: 4.01vw;
+		color: $brand-secondary;
+
+		span {
+			font-size: 1.25vw;
+			font-weight: 300;
+		}
+
+		h3 {
+			font-size: 1.71vw;
+			font-weight: 700;
+		}
+
+		&.left {
+			left: 6.25vw;
+		}
+
+		&.right {
+			right: 6.25vw;
+		}
+	}
 }
 
 /***** Media Queries *****/
+@media screen and (max-width: 1920px) {
+	#main-menu-wrapper {
+		height: 75px;
+
+		.logo-wrapper {
+			left: 40px;
+
+			.hrtech-logo {
+				width: 240px;
+			}
+		}
+
+		#desktop-menu {
+			.desktop-menu-item {
+				font-size: 13px;
+				margin: 0 30px;
+
+				&.dropdown {
+					.dropdown-wrapper {
+						top: 16px;
+						padding-top: 26px;
+
+						.dropdown-menu {
+							min-width: 200px;
+							border-top-width: 3.5px;
+							padding: 6px 0;
+
+							> li {
+	            				> a {
+									font-size: 13.5px;
+	    							padding: 6px 18px;
+
+									.event-details {
+	    								font-size: 8px;
+	    							}
+	    						}
+	    					}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	header {
+		#header-bottom {
+			h2 {
+				font-size: 33px;
+				margin-bottom: 15px;
+			}
+
+			button {
+				&:first-of-type {
+					margin-right: 26px;
+				}
+			}
+		}
+	}
+
+	.btn-custom {
+		font-size: 13px;
+		width: 200px;
+		height: 40px;
+	}
+}
+
 @media screen and (max-width: 1599px) {
 	#main-menu-wrapper {
 		justify-content: flex-end;
@@ -298,6 +478,89 @@ header {
 	header {
 		background: url(../img/bg-header-sm.jpg) no-repeat center top / cover;
 		padding-top: 80.1%;
+
+		#header-top {
+			top: 19.53vw;
+
+			h1 {
+				font-size: 7.16vw;
+
+				span {
+					font-size: 2.47vw;
+				}
+			}
+		}
+
+		#header-bottom {
+			bottom: 4.94vw;
+
+			h2 {
+				font-size: 4.55vw;
+			}
+
+			.sponsors-brands {
+				li {
+					margin-top: 4.94vw;
+
+					#avature-logo {
+						width: 10.80vw;
+					}
+
+					#benify-logo {
+						width: 13.67vw;
+					}
+
+					#cornerstone-logo {
+						width: 15.49vw;
+					}
+
+					#ibm-logo {
+						width: 7.55vw;
+					}
+
+					#oracle-logo {
+						width: 10.15vw;
+					}
+
+					#sapsuccessfactors-logo {
+						width: 26.30vw;
+					}
+
+					#workday-logo {
+						width: 9.375vw;
+					}
+
+					&:not(:last-child) {
+						margin-right: 4.81vw;
+					}
+
+					&:nth-of-type(4) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		.header-featured {
+			top: 10.67vw;
+			bottom: initial;
+
+			span {
+				font-size: 1.56vw;
+			}
+
+			h3 {
+				font-size: 2.08vw;
+			}
+
+			&.left {
+				left: 9.375vw;
+			}
+
+			&.right {
+				right: 6.90vw;
+			}
+		}
 	}
 }
 
@@ -305,6 +568,116 @@ header {
 	header {
 		background: url(../img/bg-header-xs.jpg) no-repeat center top / cover;
 		padding-top: 242.81%;
+
+		#header-top {
+			top: 27.18vw;
+
+			h1 {
+				font-size: 10.93vw;
+
+				span {
+					font-size: 3.75vw;
+				}
+			}
+		}
+
+		#header-bottom {
+			bottom: 6.56vw;
+
+			h2 {
+				font-size: 6.7vw;
+				margin-bottom: 0;
+			}
+
+			h3 {
+				font-size: 4.74vw;
+				font-weight: 300;
+				color: $brand-secondary;
+				margin-bottom: 9.68vw;
+			}
+
+			.button-wrapper {
+				@include flex-centered;
+				flex-direction: column-reverse;
+
+				button {
+					margin-right: 0;
+
+					&:last-child {
+						margin-bottom: 5.62vw;
+					}
+				}
+			}
+
+			.sponsors-brands {
+				padding: 0 11.87vw;
+				margin-top: 4.37vw;
+
+				li {
+					margin-top: 7.81vw;
+					margin-right: 0 !important;
+
+					#avature-logo {
+						width: 25.93vw;
+					}
+
+					#benify-logo {
+						width: 32.81vw;
+					}
+
+					#cornerstone-logo {
+						width: 37.18vw;
+					}
+
+					#ibm-logo {
+						width: 18.12vw
+					}
+
+					#oracle-logo {
+						width: 22.81vw;
+					}
+
+					#sapsuccessfactors-logo {
+						width: 34.06vw;
+					}
+
+					#workday-logo {
+						width: 24.06vw;
+					}
+
+					&:nth-of-type(odd) {
+						float: left;
+					}
+
+					&:nth-of-type(even) {
+						float: right;
+					}
+				}
+			}
+		}
+
+		.header-featured {
+			top: 89.06vw;
+			bottom: initial;
+
+			span {
+				font-size: 3.75vw;
+			}
+
+			h3 {
+				font-size: 5vw;
+			}
+
+			&.left {
+				left: 6.56vw;
+				text-align: left;
+			}
+
+			&.right {
+				right: 6.56vw;
+				text-align: right;
+			}
+		}
 	}
 }
 
