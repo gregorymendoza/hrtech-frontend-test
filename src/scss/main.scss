@@ -261,7 +261,7 @@
 
 header {
 	position: relative;
-	background: url(../img/bg-header-lg.jpg) no-repeat center top / cover;
+	background: url(../img/bg/bg-header-lg.jpg) no-repeat center top / cover;
 	padding-top: 57.7083%;
 	transition: all 0.75s ease-in-out;
 
@@ -322,33 +322,33 @@ header {
 		}
 
 		.sponsors-brands {
-			li {
+			a {
 				display: inline-block;
 				line-height: 0;
 				vertical-align: middle;
 				margin-top: 4.42vw;
 
-				#avature-logo {
+				.avature-logo {
 					width: 4.83vw;
 				}
 
-				#benify-logo {
+				.benify-logo {
 					width: 6.35vw;
 				}
 
-				#cornerstone-logo {
+				.cornerstone-logo {
 					width: 7.23vw;
 				}
 
-				#ibm-logo {
+				.ibm-logo {
 					width: 3.69vw;
 				}
 
-				#oracle-logo {
+				.oracle-logo {
 					width: 5.36vw;
 				}
 
-				#sapsuccessfactors-logo {
+				.sapsuccessfactors-logo {
 					width: 12.29vw;
 				}
 
@@ -381,6 +381,182 @@ header {
 		&.right {
 			right: 6.25vw;
 		}
+	}
+}
+
+#future-work {
+	text-align: center;
+	padding: 56px 23px 75px;
+
+	#future-work-icons {
+		li {
+			display: inline-block;
+			width: 3.12vw;
+
+			img {
+				width: 32px;
+				height: 32px;
+				cursor: pointer;
+			}
+
+			.icon-pop-up {
+				display: none;
+			}
+		}
+	}
+
+	#future-work-summary {
+		margin: 60px 0 70px;
+
+		h2 {
+			font-size: 30px;
+			font-weight: 900;
+			color: $brand-primary;
+			margin-bottom: 27px;
+		}
+
+		p {
+			font: 400 14px $font-secondary;
+			color: #000;
+			line-height: 24px;
+			max-width: 720px;
+			margin-left: auto;
+			margin-right: auto;
+
+			&:not(:last-of-type) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	.btn-custom {
+		color: $brand-primary;
+		background: $brand-secondary;
+		border: 1px solid $brand-primary;
+
+		&:hover {
+			color: $brand-secondary;
+			background: $brand-primary;
+		}
+
+		&:first-of-type {
+			margin-right: 15px;
+		}
+	}
+}
+
+#attendees {
+	text-align: center;
+	background-color: $brand-tertiary;
+	padding: 57px 23px;
+
+	#attendees-heading {
+		font-size: 30px;
+		font-weight: 900;
+		color: $brand-primary;
+		margin-bottom: 27px;
+	}
+
+	#attendees-description {
+		font: 400 14px $font-secondary;
+		color: #fff;
+		line-height: 24px;
+		opacity: 0.7;
+		max-width: 550px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#attendees-cards {
+		width: 1153px;
+		margin: 60px auto 0;
+
+		.attendee-card {
+			float: left;
+			width: 20%;
+			padding: 5px;
+
+			.attendee {
+				position: relative;
+				color: $brand-secondary;
+
+				.attendee-info {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 55px;
+					background-color: rgba(0, 0, 0, 0.5);
+					padding: 5px;
+
+					.attendee-occupation {
+						font-size: 10px;
+						font-weight: 400;
+					}
+				}
+
+				.attendee-info,
+				.attendee-info-expanded {
+					.attendee-name {
+						font-size: 13.5px;
+						font-weight: 500;
+						margin-bottom: 2px;
+					}
+				}
+
+				.attendee-info-expanded {
+					display: flex;
+					flex-direction: column;
+					position: absolute;
+					top: 0;
+					height: 100%;
+					width: 100%;
+					text-align: left;
+					background-color: $brand-primary;
+					padding: 7px 10px;
+					z-index: 5;
+					opacity: 0;
+					transition: opacity 0.45s ease-in-out;
+
+					.attendee-occupation {
+						font: 400 11px $font-secondary;
+						line-height: 14px;
+					}
+
+					.attendee-summary {
+						font-size: 11px;
+						line-height: 15px;
+						margin-top: 10px;
+					}
+
+					.attendee-links {
+						margin: auto 0 0;
+
+						a {
+							margin-right: 10px;
+
+							i {
+								font-size: 16.5px;
+								color: $brand-secondary;
+
+								&:hover {
+									color: $brand-tertiary;
+								}
+							}
+						}
+					}
+				}
+
+				&:hover {
+					.attendee-info-expanded {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.btn-custom {
+		margin-top: 27px;
 	}
 }
 
@@ -449,6 +625,14 @@ header {
 		width: 200px;
 		height: 40px;
 	}
+
+	#future-work {
+		#future-work-icons {
+			li {
+				width: 60px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 1599px) {
@@ -474,9 +658,19 @@ header {
 	}
 }
 
+@media screen and (max-width: 1280px) {
+	#future-work {
+		#future-work-icons {
+			li {
+				width: 46px;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	header {
-		background: url(../img/bg-header-sm.jpg) no-repeat center top / cover;
+		background: url(../img/bg/bg-header-sm.jpg) no-repeat center top / cover;
 		padding-top: 80.1%;
 
 		#header-top {
@@ -499,34 +693,34 @@ header {
 			}
 
 			.sponsors-brands {
-				li {
+				a {
 					margin-top: 4.94vw;
 
-					#avature-logo {
+					.avature-logo {
 						width: 10.80vw;
 					}
 
-					#benify-logo {
+					.benify-logo {
 						width: 13.67vw;
 					}
 
-					#cornerstone-logo {
+					.cornerstone-logo {
 						width: 15.49vw;
 					}
 
-					#ibm-logo {
+					.ibm-logo {
 						width: 7.55vw;
 					}
 
-					#oracle-logo {
+					.oracle-logo {
 						width: 10.15vw;
 					}
 
-					#sapsuccessfactors-logo {
+					.sapsuccessfactors-logo {
 						width: 26.30vw;
 					}
 
-					#workday-logo {
+					.workday-logo {
 						width: 9.375vw;
 					}
 
@@ -536,6 +730,11 @@ header {
 
 					&:nth-of-type(4) {
 						margin-right: 0;
+
+						// &:after {
+						// 	content:"\A";
+    		// 				white-space: pre;
+						// }
 					}
 				}
 			}
@@ -566,7 +765,7 @@ header {
 
 @media screen and (max-width: 640px) {
 	header {
-		background: url(../img/bg-header-xs.jpg) no-repeat center top / cover;
+		background: url(../img/bg/bg-header-xs.jpg) no-repeat center top / cover;
 		padding-top: 242.81%;
 
 		#header-top {
@@ -596,7 +795,7 @@ header {
 				margin-bottom: 9.68vw;
 			}
 
-			.button-wrapper {
+			.btn-wrapper {
 				@include flex-centered;
 				flex-direction: column-reverse;
 
@@ -613,44 +812,51 @@ header {
 				padding: 0 11.87vw;
 				margin-top: 4.37vw;
 
-				li {
+				a {
 					margin-top: 7.81vw;
 					margin-right: 0 !important;
 
-					#avature-logo {
+					.avature-logo {
 						width: 25.93vw;
 					}
 
-					#benify-logo {
+					.benify-logo {
 						width: 32.81vw;
 					}
 
-					#cornerstone-logo {
+					.cornerstone-logo {
 						width: 37.18vw;
 					}
 
-					#ibm-logo {
+					.ibm-logo {
 						width: 18.12vw
 					}
 
-					#oracle-logo {
+					.oracle-logo {
 						width: 22.81vw;
 					}
 
-					#sapsuccessfactors-logo {
+					.sapsuccessfactors-logo {
 						width: 34.06vw;
 					}
 
-					#workday-logo {
+					.workday-logo {
 						width: 24.06vw;
 					}
 
 					&:nth-of-type(odd) {
 						float: left;
+						clear: both;
 					}
 
 					&:nth-of-type(even) {
 						float: right;
+					}
+
+					&:nth-of-type(4) {
+						&:after {
+							display: none;
+						}
 					}
 				}
 			}

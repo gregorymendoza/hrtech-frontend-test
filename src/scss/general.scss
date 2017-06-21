@@ -17,7 +17,7 @@ $text-gray: #4d4d4d;
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, p {
+body, h1, h2, h3, h4, p {
 	margin: 0;
 }
 
@@ -61,6 +61,12 @@ body {
 
 .clearfix {
 	clear: both;
+}
+
+.img-responsive {
+	display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .visible-desktop,
