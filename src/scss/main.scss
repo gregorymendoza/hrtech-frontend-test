@@ -1,5 +1,6 @@
 @import "general.scss";
 
+/***** Main Menu *****/
 #main-menu-wrapper {
 	position: fixed;
 	@include flex-centered;
@@ -259,6 +260,7 @@
 	}
 }
 
+/***** Header *****/
 header {
 	position: relative;
 	background: url(../img/bg/bg-header-lg.jpg) no-repeat center top / cover;
@@ -384,6 +386,7 @@ header {
 	}
 }
 
+/***** Future of Work Section *****/
 #future-work {
 	text-align: center;
 	padding: 3.90vw 1.19vw 3.90vw;
@@ -727,6 +730,7 @@ header {
 	}
 }
 
+/***** Who Attends Our Events Section *****/
 #attendees {
 	text-align: center;
 	background-color: $brand-tertiary;

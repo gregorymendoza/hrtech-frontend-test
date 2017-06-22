@@ -4,10 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<title>Front-End Test - HR Tech World</title>
+
+	<!-- Load the page styles -->
 	<link rel="stylesheet" href="css/main.min.css">
+
+	<!-- Font Awesome -->
 	<script src="https://use.fontawesome.com/aebe86e405.js"></script>
 </head>
 <body>
+	<!-- Navigation -->
 	<nav id="main-menu-wrapper">
 		<div class="logo-wrapper">
 			<a href="/"><img class="hrtech-logo" src="img/logos/hrtech-logo.svg" alt="HR Tech World Logo"></a>
@@ -46,6 +51,7 @@
 			<li class="desktop-menu-item"><button class="btn-custom">Get Tickets!</button></li>
 		</ul>
 
+		<!-- Hamburger Icon -->
 		<div id="mobile-menu-trigger">
 			<span></span>
 			<span></span>
@@ -92,6 +98,7 @@
 		</ul>
 	</nav>
 
+	<!-- Header -->
 	<header class="text-center">
 		<div id="header-top" class="text-center">
 			<h1>
@@ -153,6 +160,7 @@
 		</div>
 	</header>
 
+	<!-- Future of Work Section -->
 	<section id="future-work">
 		<ul id="future-work-icons">
 			<li id="icon-home"><div class="icon-pop-up">Home</div></li>
@@ -194,11 +202,15 @@
 		</div>
 	</section>
 
+	<!-- Who Attends Our Events Section -->
 	<section id="attendees">
 		<h2 id="attendees-heading" class="text-uppercase">Who Attends Our Events</h2>
 		<p id="attendees-description">Attendees include CEOs and HR Leaders of both the world’s fastest growing companies and the world’s leading enterprises,
 		   alongside leading investors and media.</p>
 
+		<!--
+			Attendees data is retrieved from a JavaScript object and gets appended to the site.
+		-->
 		<ul id="attendees-cards">
 
 		</ul>
@@ -208,6 +220,7 @@
 		<button class="btn-custom">See Agenda!</button>
 	</section>
 
+	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>

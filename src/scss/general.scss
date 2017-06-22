@@ -1,3 +1,4 @@
+/***** Google Fonts ******/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900|Roboto:300,400,900|Playfair+Display);
 
 /***** Variables *****/
@@ -75,6 +76,7 @@ body {
 	display: none !important;
 }
 
+/***** General Media Queries *****/
 @media screen and (min-width: 1921px) {
 	.btn-custom {
 		font-size: 0.67vw;

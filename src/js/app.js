@@ -1,9 +1,11 @@
 $(function() {
+	// Assign jQuery selectors to variables for better performance.
 	var mobileMenu = $('#mobile-menu'),
 		mobileMenuTrigger = $('#mobile-menu-trigger'),
 		mobileMainMenu = $('.mobile-main-menu'),
 		mobileSubMenu = $('.mobile-submenu');
 
+	// Mobile hamburger menu functionality.
 	mobileMenuTrigger.click(function() {
 		$(this).toggleClass('open');
 		mobileMenu.toggleClass('active');
@@ -25,6 +27,7 @@ $(function() {
 		}
 	});
 
+	// Hard-coded list of attendees or speakers.
 	var attendees = [{
 			avatar: "img/attendees/AlarconG.jpg",
 			name: "Gretchen Alarcon",
@@ -208,6 +211,7 @@ $(function() {
 		}
 	];
 
+	// HTML Attendee Card Template.
 	var HTMLattendeeCard = '<li class="attendee-card">'+
 								'<div id="attendee-%attendeeID%" class="attendee">'+
 									'<img class="attendee-avatar img-responsive" src="%avatar%" alt="%name%">'+
@@ -229,6 +233,7 @@ $(function() {
 	var HTMLattendeeLinkedIn = '<a href="%linkedIn%" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>',
 	    HTMLattendeeWebsite =  '<a href="%website%" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>';
 
+	// Function to append and display the attendee data on the site.
 	function displayAttendees () {
 		var id = 0;
 
