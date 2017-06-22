@@ -352,7 +352,7 @@ header {
 					width: 12.29vw;
 				}
 
-				&:not(:nth-last-child(2)) {
+				&:not(:last-child) {
 					margin-right: 2.18vw;
 				}
 			}
@@ -386,45 +386,327 @@ header {
 
 #future-work {
 	text-align: center;
-	padding: 56px 23px 75px;
+	padding: 3.90vw 1.19vw 3.90vw;
+	overflow: hidden;
 
 	#future-work-icons {
 		li {
 			display: inline-block;
-			width: 3.12vw;
+			width: 1.66vw;
+			height: 1.66vw;
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size: contain;
+			vertical-align: middle;
+			transition: all 0.3s;
+			transform: scale(1);
+			cursor: pointer;
 
-			img {
-				width: 32px;
-				height: 32px;
-				cursor: pointer;
+			&:not(:last-child) {
+				margin-right: 1.66vw;
 			}
 
 			.icon-pop-up {
-				display: none;
+				position: absolute;
+				font: 400 0.41vw $font-secondary;
+				background-color: rgba(0, 0, 0, 0.05);
+				width: 6.77vw;
+				line-height: 0;
+				padding: 0.57vw 0;
+				top: -60%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				visibility: hidden;
+				opacity: 0;
+	            transition: all 0.35s;
+
+	            &:before {
+	            	position: absolute;
+	            	content: '';
+	            	top: 1.14vw;
+	            	left: 50%;
+	            	width: 0;
+	            	height: 0;
+	            	border-left: 0.52vw solid transparent;
+					border-right: 0.52vw solid transparent;
+					border-bottom: 0.52vw solid transparent;
+					border-top: 0.52vw solid rgba(0, 0, 0, 0.05);
+					transform: translateX(-50%);
+	            }
+			}
+
+			&:hover {
+				transform: scale(1.5);
+
+				.icon-pop-up {
+					visibility: visible;
+					opacity: 1;
+					transform: translate(-50%, -80%);
+				}
+			}
+		}
+
+		#icon-home {
+			background-image: url(../img/icons/home-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/home-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #97ca00;
+			}
+		}
+
+		#icon-mainstage {
+			background-image: url(../img/icons/mainstage-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/mainstage-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #18a7e0;
+			}
+		}
+
+		#icon-talent-recruitment {
+			background-image: url(../img/icons/talent&recruitment-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/talent&recruitment-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #57b1b8;
+			}
+		}
+
+		#icon-learning {
+			background-image: url(../img/icons/learning-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/learning-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #00a29a;
+			}
+		}
+
+		#icon-diversity-inclusion {
+			background-image: url(../img/icons/diversity&inclusion-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/diversity&inclusion-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #3b8954;
+			}
+		}
+
+		#icon-communication {
+			background-image: url(../img/icons/communication-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/communication-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #3c6e87;
+			}
+		}
+
+		#icon-adoption {
+			background-image: url(../img/icons/adoption-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/adoption-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #81b041;
+			}
+		}
+
+		#icon-hrss-payroll {
+			background-image: url(../img/icons/hrss&payroll-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/hrss&payroll-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #809453;
+			}
+		}
+
+		#icon-disrupthr {
+			background-image: url(../img/icons/disrupthr-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/disrupthr-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #cca82e;
+			}
+		}
+
+		#icon-hrtechnology {
+			background-image: url(../img/icons/hrtechnology-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/hrtechnology-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #bb6e3d;
+			}
+		}
+
+		#icon-formal {
+			background-image: url(../img/icons/formal-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/formal-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #1f5c99;
+			}
+		}
+
+		#icon-wellbeing-rewards {
+			background-image: url(../img/icons/wellbeing&rewards-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/wellbeing&rewards-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #a92a31;
+			}
+		}
+
+		#icon-woman {
+			background-image: url(../img/icons/woman-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/woman-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #c963c4;
+			}
+		}
+
+		#icon-productdemo {
+			background-image: url(../img/icons/productdemo-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/productdemo-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #e41a52;
+			}
+		}
+
+		#icon-digitalhr {
+			background-image: url(../img/icons/digitalhr-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/digitalhr-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #ee2a7b;
+			}
+		}
+
+		#icon-smartdata {
+			background-image: url(../img/icons/smartdata-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/smartdata-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #8a5ea4;
+			}
+		}
+
+		#icon-messagespread {
+			background-image: url(../img/icons/messagespread-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/messagespread-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #ef993a;
+			}
+		}
+
+		#icon-thinktank {
+			background-image: url(../img/icons/thinktank-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/thinktank-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #3f80c2;
+			}
+		}
+
+		#icon-thinktank2 {
+			background-image: url(../img/icons/thinktank2-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/thinktank2-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #3f80c2;
+			}
+		}
+
+		#icon-thinktank3 {
+			background-image: url(../img/icons/thinktank3-icon.svg);
+
+			&:hover {
+				background-image: url(../img/icons/thinktank3-icon-color.svg);
+			}
+
+			.icon-pop-up {
+				color: #3f80c2;
 			}
 		}
 	}
 
 	#future-work-summary {
-		margin: 60px 0 70px;
+		margin: 3.12vw 0 3.64vw;
 
 		h2 {
-			font-size: 30px;
+			font-size: 1.66vw;
 			font-weight: 900;
 			color: $brand-primary;
-			margin-bottom: 27px;
+			margin-bottom: 1.56vw;
 		}
 
 		p {
-			font: 400 14px $font-secondary;
+			font: 400 0.72vw $font-secondary;
 			color: #000;
-			line-height: 24px;
-			max-width: 720px;
+			line-height: 1.25vw;
+			max-width: 37.5vw;
 			margin-left: auto;
 			margin-right: auto;
 
 			&:not(:last-of-type) {
-				margin-bottom: 30px;
+				margin-bottom: 1.40vw;
 			}
 		}
 	}
@@ -432,7 +714,7 @@ header {
 	.btn-custom {
 		color: $brand-primary;
 		background: $brand-secondary;
-		border: 1px solid $brand-primary;
+		border: 0.05vw solid $brand-primary;
 
 		&:hover {
 			color: $brand-secondary;
@@ -440,7 +722,7 @@ header {
 		}
 
 		&:first-of-type {
-			margin-right: 15px;
+			margin-right: 0.78vw;
 		}
 	}
 }
@@ -448,33 +730,34 @@ header {
 #attendees {
 	text-align: center;
 	background-color: $brand-tertiary;
-	padding: 57px 23px;
+	padding: 2.96vw 1.19vw;
 
 	#attendees-heading {
-		font-size: 30px;
+		font-size: 1.66vw;
 		font-weight: 900;
 		color: $brand-primary;
-		margin-bottom: 27px;
+		margin-bottom: 1.30vw;
 	}
 
 	#attendees-description {
-		font: 400 14px $font-secondary;
+		font: 400 0.72vw $font-secondary;
 		color: #fff;
-		line-height: 24px;
+		line-height: 1.25vw;
 		opacity: 0.7;
-		max-width: 550px;
+		max-width: 28.64vw;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	#attendees-cards {
-		width: 1153px;
-		margin: 60px auto 0;
+		display: flex;
+		flex-wrap: wrap;
+		width: 65.10vw;
+		margin: 3.12vw auto 0;
 
 		.attendee-card {
-			float: left;
 			width: 20%;
-			padding: 5px;
+			padding: 0.26vw;
 
 			.attendee {
 				position: relative;
@@ -484,22 +767,26 @@ header {
 					position: absolute;
 					bottom: 0;
 					width: 100%;
-					height: 55px;
-					background-color: rgba(0, 0, 0, 0.5);
-					padding: 5px;
+					height: 2.86vw;
+					background-color: rgba(0, 0, 0, 0.6);
+					padding: 0.26vw;
 
 					.attendee-occupation {
-						font-size: 10px;
+						font-size: 0.52vw;
 						font-weight: 400;
 					}
+				}
+
+				.attendee-avatar {
+					width: 100%;
 				}
 
 				.attendee-info,
 				.attendee-info-expanded {
 					.attendee-name {
-						font-size: 13.5px;
+						font-size: 0.67vw;
 						font-weight: 500;
-						margin-bottom: 2px;
+						margin-bottom: 0.10vw;
 					}
 				}
 
@@ -512,30 +799,30 @@ header {
 					width: 100%;
 					text-align: left;
 					background-color: $brand-primary;
-					padding: 7px 10px;
+					padding: 0.36vw 0.52vw;
 					z-index: 5;
 					opacity: 0;
 					transition: opacity 0.45s ease-in-out;
 
 					.attendee-occupation {
-						font: 400 11px $font-secondary;
-						line-height: 14px;
+						font: 400 0.57vw $font-secondary;
+						line-height: 0.72vw;
 					}
 
 					.attendee-summary {
-						font-size: 11px;
-						line-height: 15px;
-						margin-top: 10px;
+						font-size: 0.57vw;
+						line-height: 0.78vw;
+						margin-top: 0.52vw;
 					}
 
 					.attendee-links {
 						margin: auto 0 0;
 
 						a {
-							margin-right: 10px;
+							margin-right: 0.93vw;
 
 							i {
-								font-size: 16.5px;
+								font-size: 0.83vw;
 								color: $brand-secondary;
 
 								&:hover {
@@ -556,7 +843,7 @@ header {
 	}
 
 	.btn-custom {
-		margin-top: 27px;
+		margin-top: 1.40vw;
 	}
 }
 
@@ -627,21 +914,136 @@ header {
 	}
 
 	#future-work {
+		padding: 75px 23px 75px;
+
 		#future-work-icons {
 			li {
-				width: 60px;
+				width: 32px;
+				height: 32px;
+
+				&:not(:last-child) {
+					margin-right: 32px;
+				}
+
+				.icon-pop-up {
+					font-size: 8px;
+					width: 130px;
+					padding: 11px 0;
+
+					&:before {
+						top: 22px;
+						border-width: 10px;
+ 					}
+				}
 			}
+		}
+
+		#future-work-summary {
+			margin: 60px 0 70px;
+
+			h2 {
+				font-size: 32px;
+				margin-bottom: 30px;
+			}
+
+			p {
+				font-size: 14px;
+				line-height: 24px;
+				max-width: 720px;
+
+				&:not(:last-of-type) {
+					margin-bottom: 27px;
+				}
+			}
+		}
+
+		.btn-custom {
+			border-width: 1px;
+
+			&:first-of-type {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	#attendees {
+		padding: 57px 23px;
+
+		#attendees-heading {
+			font-size: 32px;
+			margin-bottom: 25px;
+		}
+
+		#attendees-description {
+			font-size: 14px;
+			line-height: 24px;
+			max-width: 550px;
+		}
+
+		#attendees-cards {
+			width: 1250px;
+			margin: 60px auto 0;
+
+			.attendee-card {
+				.attendee {
+					.attendee-info {
+						height: 55px;
+						padding: 5px;
+
+						.attendee-occupation {
+							font-size: 10px;
+						}
+					}
+
+					.attendee-info,
+					.attendee-info-expanded {
+						.attendee-name {
+							font-size: 13.5px;
+							margin-bottom: 2px;
+						}
+					}
+
+					.attendee-info-expanded {
+						padding: 7px 10px;
+
+						.attendee-occupation {
+							font: 400 11px $font-secondary;
+							line-height: 14px;
+						}
+
+						.attendee-summary {
+							font-size: 11px;
+							line-height: 15px;
+							margin-top: 10px;
+						}
+
+						.attendee-links {
+							a {
+								margin-right: 18px;
+
+								i {
+									font-size: 16.5px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.btn-custom {
+			margin-top: 27px;
 		}
 	}
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1600px) {
 	#main-menu-wrapper {
 		justify-content: flex-end;
 	}
 }
 
-@media screen and (max-width: 1319px) {
+@media screen and (max-width: 1320px) {
 	#main-menu-wrapper {
 		.logo-wrapper {
 			left: 20px;
@@ -656,13 +1058,41 @@ header {
 			display: block;
 		}
 	}
-}
 
-@media screen and (max-width: 1280px) {
 	#future-work {
 		#future-work-icons {
-			li {
-				width: 46px;
+			display: none;
+		}
+
+		#future-work-summary {
+			margin-top: 0;
+		}
+	}
+
+	#attendees {
+		#attendees-cards {
+			width: 100%;
+
+			.attendee-card {
+				width: 25%;
+
+				.attendee {
+					.attendee-info {
+						height: 5.85vw;
+
+						.attendee-name {
+							font-size: 1.43vw;
+						}
+
+						.attendee-occupation {
+							font-size: 0.91vw;
+						}
+					}
+
+					.attendee-info-expanded {
+						display: none;
+					}
+				}
 			}
 		}
 	}
@@ -730,11 +1160,6 @@ header {
 
 					&:nth-of-type(4) {
 						margin-right: 0;
-
-						// &:after {
-						// 	content:"\A";
-    		// 				white-space: pre;
-						// }
 					}
 				}
 			}
@@ -761,9 +1186,56 @@ header {
 			}
 		}
 	}
+
+	#future-work {
+		padding: 30px 23px 34px;
+
+		#future-work-summary {
+			margin-bottom: 32px;
+
+			h2 {
+				font-size: 23px;
+				margin-bottom: 27px;
+			}
+
+			p {
+				font-size: 12px;
+				line-height: 22px;
+
+				&:not(:last-of-type) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+
+	#attendees {
+		padding: 35px 2.99vw 40px;
+
+		#attendees-heading {
+			font-size: 23px;
+		}
+
+		#attendees-description {
+			font-size: 12px;
+			max-width: 480px;
+			opacity: 1;
+		}
+
+		#attendees-cards {
+			margin-top: 30px;
+			margin-bottom: 40px;
+		}
+	}
 }
 
 @media screen and (max-width: 640px) {
+	#main-menu-wrapper {
+		.logo-wrapper {
+			left: 17px;
+		}
+	}
+
 	header {
 		background: url(../img/bg/bg-header-xs.jpg) no-repeat center top / cover;
 		padding-top: 242.81%;
@@ -810,7 +1282,7 @@ header {
 
 			.sponsors-brands {
 				padding: 0 11.87vw;
-				margin-top: 4.37vw;
+				margin-top: 4.68vw;
 
 				a {
 					margin-top: 7.81vw;
@@ -883,6 +1355,69 @@ header {
 				right: 6.56vw;
 				text-align: right;
 			}
+		}
+	}
+
+	#future-work {
+		#future-work-summary {
+			margin-bottom: 60px;
+		}
+
+		.btn-wrapper {
+			@include flex-centered;
+			flex-direction: column;
+
+			.btn-custom {
+				margin-right: 0;
+
+				&:first-child {
+					margin-bottom: 5.62vw;
+				}
+			}
+		}
+	}
+
+	#attendees {
+		padding: 25px 0;
+
+		#attendees-heading {
+
+		}
+
+		#attendees-description {
+			padding: 0 20px;
+		}
+
+		#attendees-cards {
+			padding: 0 0.93vw;
+			margin-top: 28px;
+
+			.attendee-card {
+				width: 50%;
+				padding: 0.93vw;
+
+				.attendee {
+					.attendee-info {
+						height: 14.06vw;
+
+						.attendee-name {
+							font-size: 3.12vw;
+						}
+
+						.attendee-occupation {
+							font-size: 2.18vw;
+						}
+					}
+
+					.attendee-info-expanded {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.btn-custom {
+			margin-top: 0;
 		}
 	}
 }
