@@ -229,8 +229,8 @@ $(function() {
 								'</div>'+
 							'</li>';
 
-	var HTMLattendeeTwitter = '<a href="%twitter%" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
-	var HTMLattendeeLinkedIn = '<a href="%linkedIn%" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>',
+	var HTMLattendeeTwitter = '<a href="%twitter%" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>',
+	    HTMLattendeeLinkedIn = '<a href="%linkedIn%" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>',
 	    HTMLattendeeWebsite =  '<a href="%website%" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>';
 
 	// Function to append and display the attendee data on the site.
